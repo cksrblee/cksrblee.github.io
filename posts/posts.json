@@ -1,15 +1,17 @@
 [
   {
-    "slug": "2026-11-12-welcome",
-    "file": "posts/2026-11-12-welcome.md",
-    "title": "Hello, GitHub Pages! — Migrating from Notion & oopy",
+    "slug": "2026-11-12-embodied-ai-extended-reality-sop",
+    "file": "posts/2026-11-12-embodied-ai-extended-reality-sop.md",
+    "title": "Embodied AI-Based Extended Reality Research — Why I Came to USC",
     "date": "2026-11-12",
     "tags": [
-      "meta",
-      "web",
-      "github-pages"
+      "sop",
+      "usc",
+      "embodied-ai",
+      "xr",
+      "spatial-intelligence"
     ],
-    "summary": "Notes on moving my personal portfolio from Notion + oopy to a fast, Markdown-driven static site on GitHub Pages.",
-    "readTime": "1 min read"
+    "summary": "An English translation of my May 2025 Study Plan (Statement of Purpose) for the M.S. in Computer Science (AI) at USC—why I turned from the metaverse to XR, what I study, and the future I hope to build.",
+    "readTime": "9 min read"
   }
 ]
