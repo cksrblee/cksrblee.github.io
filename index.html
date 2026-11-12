@@ -14,437 +14,461 @@
 </head>
 <body>
   <div class="split-layout">
-    <!-- Left Sticky Sidebar (Desktop Split View) / Top Blocks (Mobile) -->
+    <!-- Fixed Left Sidebar (Desktop) / Flattened Top Profile (Mobile) -->
     <aside class="split-sidebar" aria-label="Profile & Navigation">
-      <header class="cy-name-block">
-        <h1 class="cy-h1">
-          <span class="cy-name">Changyu Lee</span>
-          <span class="cy-role">AI Engineer</span>
-        </h1>
-      </header>
-
-      <div class="profile-card">
-        <div class="profile-photo-wrap">
-          <img src="assets/images/profile.jpg" alt="Changyu Lee" data-zoomable />
-        </div>
-        <div class="profile-meta">
-          <p class="profile-greeting">Welcome to Changyu’s page</p>
-          <p>Please call me <code class="inline-code">Chan</code>!</p>
-          <div class="profile-links">
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/changyu-lee" target="_blank" rel="noopener noreferrer">Changyu Lee</a></p>
-            <p>GitHub: <a href="https://github.com/cksrblee" target="_blank" rel="noopener noreferrer">chancksrb</a></p>
-            <p>Email: clee1806 at usc dot edu</p>
+      <div class="sidebar-top">
+        <div class="profile-card">
+          <div class="profile-photo-wrap">
+            <img src="assets/images/profile.jpg" alt="Changyu Lee" data-zoomable />
+          </div>
+          <div class="profile-meta">
+            <p class="profile-name">Changyu Lee</p>
+            <p class="profile-greeting">Welcome to Changyu’s page</p>
+            <p class="profile-nick">Please call me <code class="inline-code">Chan</code>!</p>
+            <p class="profile-sub">M.S. CS (AI) @ USC</p>
           </div>
         </div>
+
+        <nav class="sidebar-nav" aria-label="Page sections">
+          <a href="#about" class="sidebar-nav-link is-active" data-section="about">
+            <span class="nav-dot" aria-hidden="true"></span>About
+          </a>
+          <a href="#education" class="sidebar-nav-link" data-section="education">
+            <span class="nav-dot" aria-hidden="true"></span>Education
+          </a>
+          <a href="#experience" class="sidebar-nav-link" data-section="experience">
+            <span class="nav-dot" aria-hidden="true"></span>Experience
+          </a>
+          <a href="#honors" class="sidebar-nav-link" data-section="honors">
+            <span class="nav-dot" aria-hidden="true"></span>Honors &amp; Awards
+          </a>
+          <a href="#press" class="sidebar-nav-link" data-section="press">
+            <span class="nav-dot" aria-hidden="true"></span>Press &amp; News
+          </a>
+          <a href="#others" class="sidebar-nav-link" data-section="others">
+            <span class="nav-dot" aria-hidden="true"></span>Others
+          </a>
+        </nav>
       </div>
 
-      <nav class="sidebar-nav" aria-label="Page sections">
-        <a href="#about" class="sidebar-nav-link is-active" data-section="about">About</a>
-        <a href="#education" class="sidebar-nav-link" data-section="education">Education</a>
-        <a href="#experience" class="sidebar-nav-link" data-section="experience">Experience</a>
-        <a href="#honors" class="sidebar-nav-link" data-section="honors">Honors &amp; Awards</a>
-        <a href="#press" class="sidebar-nav-link" data-section="press">Press &amp; News</a>
-        <a href="#others" class="sidebar-nav-link" data-section="others">Others</a>
-      </nav>
-
-      <div class="cy-chat-inline">
-        <h2 class="cy-chat-title">✨ Curious about Chan?</h2>
-        <p class="cy-chat-desc">
-          Ask me anything about my research, projects, or experience.
-          My AI assistant is here to help!
-        </p>
-        <button type="button" class="cy-chat-btn" id="cyChatBtn">
-          💬 Chat with Chan's AI
-        </button>
+      <div class="sidebar-bottom">
+        <div class="profile-links">
+          <a class="social-pill" href="https://www.linkedin.com/in/changyu-lee" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="social-pill" href="https://github.com/cksrblee" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+            <span>chancksrb</span>
+          </a>
+        </div>
+        <p class="sidebar-email">Email: clee1806 at usc dot edu</p>
       </div>
     </aside>
 
-    <!-- Right Content Area -->
+    <!-- Right Scrollable Main Area -->
     <main class="split-main">
-      <!-- About / Bio -->
-      <section id="about" class="content-section intro-bio" aria-label="About">
-        <div class="section-header about-header">
-          <h2 class="section-title">About</h2>
-          <p class="section-subtitle">Applied AI &amp; Spatial Intelligence</p>
-        </div>
-        <div class="bio-card">
-          <p>
-            Hello! I am an Applied AI Engineer &amp; currently M.S. candidate in
-            <a href="https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science-artificial-intelligence/" target="_blank" rel="noopener noreferrer">
-              Computer Science (Artificial Intelligence) at the University of Southern California (USC)</a>.
-          </p>
-          <p>
-            Before joining USC, I received dual B.S. degrees in
-            <a href="https://www.konkuk.ac.kr/en/14623/subview.do" target="_blank" rel="noopener noreferrer">Smart ICT Convergence</a>
-            and
-            <a href="https://www.konkuk.ac.kr/en/14620/subview.do" target="_blank" rel="noopener noreferrer">Smart Vehicle Engineering</a>
-            from
-            <a href="https://www.konkuk.ac.kr/sites/en/index.do" target="_blank" rel="noopener noreferrer">Konkuk University</a>
-            under Prof. Sangho Kim in 2024.<br />
-            I previously worked as a research engineer at
-            <a href="https://www.nestyle.ai/" target="_blank" rel="noopener noreferrer">Nestyle Intelligence</a>
-            collaborating with
-            <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener noreferrer">KAIST AI</a>
-            <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener noreferrer">DAVIAN Lab.</a>
-            under
-            <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener noreferrer">Prof. Jaegul Choo</a>,
-            and served as a visiting researcher at Sejong University Graduate School of Metaverse.
-          </p>
-        </div>
-      </section>
+      <div class="main-inner">
+        <!-- Hero Header -->
+        <header class="cy-name-block">
+          <h1 class="cy-h1">
+            <span class="cy-name">Changyu Lee</span>
+            <span class="cy-role">AI Engineer</span>
+          </h1>
+        </header>
 
-      <hr class="section-divider" />
-
-      <!-- Education -->
-      <section id="education" class="content-section">
-        <div class="section-header">
-          <h2 class="section-title">Education</h2>
-          <p class="section-subtitle">Path to Growth</p>
-        </div>
-
-        <div class="experience-wrapper">
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-usc.png" alt="USC Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">MS Student in CSAI</div>
-              <div class="experience-company">University of Southern California</div>
-              <div class="experience-meta">Aug 2025 – Present · United States</div>
-              <div class="skill-tags">Global Korea Scholarship Fellow / USC APAA Scholarship Awardee</div>
-            </div>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-konkuk.jpg" alt="Konkuk University Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">BS Student in CS</div>
-              <div class="experience-company">Konkuk University</div>
-              <div class="experience-meta">Mar 2018 – Feb 2024 (Including ROK Army) · 4 yrs · South Korea</div>
-              <div class="skill-tags">Full-ride Scholarship</div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <hr class="section-divider" />
-
-      <!-- Experience -->
-      <section id="experience" class="content-section">
-        <div class="section-header">
-          <h2 class="section-title">Experience</h2>
-          <p class="section-subtitle">Connecting Dots</p>
-        </div>
-
-        <div class="experience-wrapper">
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-usc.png" alt="USC Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">Researcher</div>
-              <div class="experience-company">Integrated Media Systems Center, USC</div>
-              <div class="experience-meta">
-                Sep 2025 – Present · Los Angeles, United States<br />
-                Advisor: Dr. Seon Ho Kim (Associate Director)
-              </div>
-              <ul class="experience-bullets">
-                <li>Joined USC IMSC research team under Dr. Seon Ho Kim.</li>
-                <li>Exploring Geospatial Information × Vision-Language Models (VLMs).</li>
-                <li>Beginning first master’s research project with focus on spatial intelligence.</li>
-                <li>Aiming to build LLMs that understand 3D spatial environments.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-kaist.jpg" alt="KAIST Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">Research Engineer</div>
-              <div class="experience-company">Korea Advanced Institute of Science and Technology · Internship</div>
-              <div class="experience-meta">
-                Jul 2023 – Aug 2025 · 2 yrs 1 mon · South Korea · Hybrid<br />
-                Advisor: Prof Jaegul Choo, DAVIAN Lab.
-              </div>
-              <div class="skill-tags">
-                Skills: OpenAI API &nbsp;·&nbsp; LangChain &nbsp;·&nbsp; AI &nbsp;·&nbsp; Large Language Models (LLM) &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; LangGraph
-              </div>
-            </div>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-nestyle.jpg" alt="NESTYLE Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">Research Engineer</div>
-              <div class="experience-company">NESTYLE · Full-time</div>
-              <div class="experience-meta">Jul 2023 – Aug 2025 · 2 yrs 1 mon · Seoul, South Korea · Hybrid</div>
-              <ul class="experience-bullets">
-                <li>Developed an AI-assisted web-novel writing platform by leveraging RAG processes and achieved over 50 % reduction in maximum token usage by Prompt Engineering.</li>
-                <li>Fine-tuned Hugging Face open-source models specialized for web novels and implemented Tools / Function Calling features to validate the concept of fully automated novel-generation AI agents.</li>
-                <li>Led end-to-end system engineering and back-end API development, resulting in ~40 % average monthly user growth (for 1 year after launch) and 2 000 generated novels.</li>
-              </ul>
-              <div class="skill-tags">
-                Skills: OpenAI API · LangChain · Python · Large Language Models (LLM) · FastAPI · Prompt Engineering
-              </div>
-            </div>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-sejong.jpg" alt="Sejong University Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">Visiting Researcher</div>
-              <div class="experience-company">Sejong University · Part-time</div>
-              <div class="experience-meta">Dec 2023 – May 2024 · 6 mos · Seoul, South Korea · Remote</div>
-              <ul class="experience-bullets">
-                <li>Conducted user-experience (UX) research, focusing on emotional or empathetic experiences in virtual worlds.</li>
-                <li>Led the development of <em>Buddyz</em> as a Unity programmer – a VR game designed to promote stray-dog adoption.</li>
-              </ul>
-              <div class="skill-tags">Skills: Meta Interaction Toolkit · Unity</div>
-            </div>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-morphing-i.jpg" alt="Morphing I Inc. Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">Researcher</div>
-              <div class="experience-company">Morphing I Inc. · Internship</div>
-              <div class="experience-meta">Jan 2023 – May 2023 · 5 mos · Seoul, South Korea · On-site</div>
-              <ul class="experience-bullets">
-                <li>Engaged in R&amp;D planning and execution in Metaverse, AI, and Blockchain domains.</li>
-                <li>Key achievements include developing a Proof of Concept for an NFT Metaverse Gallery (National IT Industry Promotion Agency grant $0.2 M, 2022) and contributing to the AI Learning Data Construction Support Project by accumulating data on Jeju Island’s water-supply pipes using biomimetic robots (grant $1 M, 2023).</li>
-              </ul>
-              <div class="skill-tags">Skills: Large Language Models (LLM)</div>
-            </div>
-          </article>
-
-          <article class="experience-item">
-            <div class="experience-logo">
-              <img src="assets/images/logo-konkuk.jpg" alt="Konkuk University Logo" />
-            </div>
-            <div class="experience-details">
-              <div class="experience-role">Undergraduate Research Assistant</div>
-              <div class="experience-company">Konkuk University · Full-time</div>
-              <div class="experience-meta">
-                Sep 2021 – Jan 2023 · 1 yr 5 mos · Aerospace Artificial Intelligence Convergence Lab., Konkuk University · On-site
-              </div>
-              <ul class="experience-bullets">
-                <li>Conducted research on user-centric augmented-reality (AR) applications for efficient unmanned-aerial-vehicle (UAV) operation, focusing on intuitive and interactive interfaces.</li>
-                <li>Fine-tuned object-detection models for UAV precision landing and performed building extraction from remote-sensing images.</li>
-                <li>Participated in the project for fixed-wing-type air mobility capable of VTOL (Vertical Take-Off and Landing).</li>
-              </ul>
-              <div class="skill-tags">Skills: Drone · OpenCV · HoloLens 2 · C# · Aerospace</div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <hr class="section-divider" />
-
-      <!-- Honors & Awards -->
-      <section id="honors" class="content-section">
-        <div class="section-header">
-          <h2 class="section-title">Honors &amp; Awards</h2>
-          <p class="section-subtitle">
-            A collection of some awards and honors recognizing my achievements in academics, research, and various activities.
-          </p>
-        </div>
-
-        <div class="notion-list-wrap">
-          <ul class="notion-list">
-            <li>
-              <strong>Global Korea Scholarship (GKS) Fellow - National Top AI Talent selected by Korea Government</strong>
-            </li>
-            <li>
-              U.S. Army Achievement Medal
-              <ul class="notion-sublist">
-                <li>Awarded by U.S. Army for outstanding service and leadership.</li>
-              </ul>
-            </li>
-            <li>
-              Certificate of Achievement
-              <ul class="notion-sublist">
-                <li>Recognized for excellence by U.S. Army command leadership.</li>
-              </ul>
-            </li>
-            <li>
-              Konkuk University Global Leader Scholarship - Full-ride Tuition Exemption
-              <ul class="notion-sublist">
-                <li>Awarded to top 1–2% of incoming students for outstanding academic excellence.</li>
-              </ul>
-            </li>
-            <li>
-              Grand Prize, International Personal Air Vehicle Technology Competition
-              <ul class="notion-sublist">
-                <li>Recognized for developing an autonomous VTOL aircraft with AI vision.</li>
-              </ul>
-            </li>
-            <li>
-              Excellence Award, 2023 Metaverse Developer Competition
-              <ul class="notion-sublist">
-                <li>Built a metaverse art auction platform combining AI and blockchain.</li>
-              </ul>
-            </li>
-            <li>
-              KU Super Rookie Fellowship
-              <ul class="notion-sublist">
-                <li>Awarded as Certified Talents of Konkuk University</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Image Slide -->
-        <div class="cy-carousel" id="honorsCarousel" aria-label="Honors and Certificates Gallery">
-          <div class="cy-carousel-header">
-            <span class="cy-carousel-badge">🏅 Certificates &amp; Awards</span>
-            <span class="cy-carousel-counter">1 / 5</span>
+        <!-- About / Intro + Chatbot Widget -->
+        <section id="about" class="content-section intro-row" aria-label="About">
+          <div class="intro-bio">
+            <p>
+              Hello! I am an Applied AI Engineer &amp; currently M.S. candidate in
+              <a href="https://viterbigradadmission.usc.edu/programs/masters/msprograms/computer-science/ms-computer-science-artificial-intelligence/" target="_blank" rel="noopener noreferrer">
+                Computer Science (Artificial Intelligence) at the University of Southern California (USC)</a>.
+            </p>
+            <p>
+              Before joining USC, I received dual B.S. degrees in
+              <a href="https://www.konkuk.ac.kr/en/14623/subview.do" target="_blank" rel="noopener noreferrer">Smart ICT Convergence</a>
+              and
+              <a href="https://www.konkuk.ac.kr/en/14620/subview.do" target="_blank" rel="noopener noreferrer">Smart Vehicle Engineering</a>
+              from
+              <a href="https://www.konkuk.ac.kr/sites/en/index.do" target="_blank" rel="noopener noreferrer">Konkuk University</a>
+              under Prof. Sangho Kim in 2024.<br />
+              I previously worked as a research engineer at
+              <a href="https://www.nestyle.ai/" target="_blank" rel="noopener noreferrer">Nestyle Intelligence</a>
+              collaborating with
+              <a href="https://gsai.kaist.ac.kr/" target="_blank" rel="noopener noreferrer">KAIST AI</a>
+              <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener noreferrer">DAVIAN Lab.</a>
+              under
+              <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener noreferrer">Prof. Jaegul Choo</a>,
+              and served as a visiting researcher at Sejong University Graduate School of Metaverse.
+            </p>
           </div>
-          <div class="cy-carousel-viewport">
-            <div class="cy-carousel-track">
-              <div class="cy-carousel-slide">
-                <img src="assets/images/honor-1.jpg" alt="U.S. Army Award 1" data-zoomable />
+
+          <div class="cy-chat-inline">
+            <h2 class="cy-chat-title">✨ Curious about Chan?</h2>
+            <p class="cy-chat-desc">
+              Ask me anything about my research, projects, or experience.
+              My AI assistant is here to help!
+            </p>
+            <button type="button" class="cy-chat-btn" id="cyChatBtn">
+              💬 Chat with Chan's AI
+            </button>
+          </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- Education -->
+        <section id="education" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Path to Growth</p>
+          </div>
+
+          <div class="experience-wrapper">
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-usc.png" alt="USC Logo" />
               </div>
-              <div class="cy-carousel-slide">
-                <img src="assets/images/honor-2.jpg" alt="U.S. Army Award 2" data-zoomable />
+              <div class="experience-details">
+                <div class="experience-role">MS Student in CSAI</div>
+                <div class="experience-company">University of Southern California</div>
+                <div class="experience-meta">Aug 2025 – Present · United States</div>
+                <div class="skill-tags">Global Korea Scholarship Fellow / USC APAA Scholarship Awardee</div>
               </div>
-              <div class="cy-carousel-slide">
-                <img src="assets/images/honor-3-scholarship.jpg" alt="Konkuk University Global Leader Scholarship Certificate" data-zoomable />
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-konkuk.jpg" alt="Konkuk University Logo" />
               </div>
-              <div class="cy-carousel-slide">
-                <img src="assets/images/honor-4.png" alt="Award Certificate 4" data-zoomable />
+              <div class="experience-details">
+                <div class="experience-role">BS Student in CS</div>
+                <div class="experience-company">Konkuk University</div>
+                <div class="experience-meta">Mar 2018 – Feb 2024 (Including ROK Army) · 4 yrs · South Korea</div>
+                <div class="skill-tags">Full-ride Scholarship</div>
               </div>
-              <div class="cy-carousel-slide">
-                <img src="assets/images/honor-5.png" alt="Award Certificate 5" data-zoomable />
+            </article>
+          </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- Experience -->
+        <section id="experience" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Connecting Dots</p>
+          </div>
+
+          <div class="experience-wrapper">
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-usc.png" alt="USC Logo" />
               </div>
+              <div class="experience-details">
+                <div class="experience-role">Researcher</div>
+                <div class="experience-company">Integrated Media Systems Center, USC</div>
+                <div class="experience-meta">
+                  Sep 2025 – Present · Los Angeles, United States<br />
+                  Advisor: Dr. Seon Ho Kim (Associate Director)
+                </div>
+                <ul class="experience-bullets">
+                  <li>Joined USC IMSC research team under Dr. Seon Ho Kim.</li>
+                  <li>Exploring Geospatial Information × Vision-Language Models (VLMs).</li>
+                  <li>Beginning first master’s research project with focus on spatial intelligence.</li>
+                  <li>Aiming to build LLMs that understand 3D spatial environments.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-kaist.jpg" alt="KAIST Logo" />
+              </div>
+              <div class="experience-details">
+                <div class="experience-role">Research Engineer</div>
+                <div class="experience-company">Korea Advanced Institute of Science and Technology · Internship</div>
+                <div class="experience-meta">
+                  Jul 2023 – Aug 2025 · 2 yrs 1 mon · South Korea · Hybrid<br />
+                  Advisor: Prof Jaegul Choo, DAVIAN Lab.
+                </div>
+                <div class="skill-tags">
+                  Skills: OpenAI API &nbsp;·&nbsp; LangChain &nbsp;·&nbsp; AI &nbsp;·&nbsp; Large Language Models (LLM) &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; LangGraph
+                </div>
+              </div>
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-nestyle.jpg" alt="NESTYLE Logo" />
+              </div>
+              <div class="experience-details">
+                <div class="experience-role">Research Engineer</div>
+                <div class="experience-company">NESTYLE · Full-time</div>
+                <div class="experience-meta">Jul 2023 – Aug 2025 · 2 yrs 1 mon · Seoul, South Korea · Hybrid</div>
+                <ul class="experience-bullets">
+                  <li>Developed an AI-assisted web-novel writing platform by leveraging RAG processes and achieved over 50 % reduction in maximum token usage by Prompt Engineering.</li>
+                  <li>Fine-tuned Hugging Face open-source models specialized for web novels and implemented Tools / Function Calling features to validate the concept of fully automated novel-generation AI agents.</li>
+                  <li>Led end-to-end system engineering and back-end API development, resulting in ~40 % average monthly user growth (for 1 year after launch) and 2 000 generated novels.</li>
+                </ul>
+                <div class="skill-tags">
+                  Skills: OpenAI API · LangChain · Python · Large Language Models (LLM) · FastAPI · Prompt Engineering
+                </div>
+              </div>
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-sejong.jpg" alt="Sejong University Logo" />
+              </div>
+              <div class="experience-details">
+                <div class="experience-role">Visiting Researcher</div>
+                <div class="experience-company">Sejong University · Part-time</div>
+                <div class="experience-meta">Dec 2023 – May 2024 · 6 mos · Seoul, South Korea · Remote</div>
+                <ul class="experience-bullets">
+                  <li>Conducted user-experience (UX) research, focusing on emotional or empathetic experiences in virtual worlds.</li>
+                  <li>Led the development of <em>Buddyz</em> as a Unity programmer – a VR game designed to promote stray-dog adoption.</li>
+                </ul>
+                <div class="skill-tags">Skills: Meta Interaction Toolkit · Unity</div>
+              </div>
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-morphing-i.jpg" alt="Morphing I Inc. Logo" />
+              </div>
+              <div class="experience-details">
+                <div class="experience-role">Researcher</div>
+                <div class="experience-company">Morphing I Inc. · Internship</div>
+                <div class="experience-meta">Jan 2023 – May 2023 · 5 mos · Seoul, South Korea · On-site</div>
+                <ul class="experience-bullets">
+                  <li>Engaged in R&amp;D planning and execution in Metaverse, AI, and Blockchain domains.</li>
+                  <li>Key achievements include developing a Proof of Concept for an NFT Metaverse Gallery (National IT Industry Promotion Agency grant $0.2 M, 2022) and contributing to the AI Learning Data Construction Support Project by accumulating data on Jeju Island’s water-supply pipes using biomimetic robots (grant $1 M, 2023).</li>
+                </ul>
+                <div class="skill-tags">Skills: Large Language Models (LLM)</div>
+              </div>
+            </article>
+
+            <article class="experience-item">
+              <div class="experience-logo">
+                <img src="assets/images/logo-konkuk.jpg" alt="Konkuk University Logo" />
+              </div>
+              <div class="experience-details">
+                <div class="experience-role">Undergraduate Research Assistant</div>
+                <div class="experience-company">Konkuk University · Full-time</div>
+                <div class="experience-meta">
+                  Sep 2021 – Jan 2023 · 1 yr 5 mos · Aerospace Artificial Intelligence Convergence Lab., Konkuk University · On-site
+                </div>
+                <ul class="experience-bullets">
+                  <li>Conducted research on user-centric augmented-reality (AR) applications for efficient unmanned-aerial-vehicle (UAV) operation, focusing on intuitive and interactive interfaces.</li>
+                  <li>Fine-tuned object-detection models for UAV precision landing and performed building extraction from remote-sensing images.</li>
+                  <li>Participated in the project for fixed-wing-type air mobility capable of VTOL (Vertical Take-Off and Landing).</li>
+                </ul>
+                <div class="skill-tags">Skills: Drone · OpenCV · HoloLens 2 · C# · Aerospace</div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- Honors & Awards -->
+        <section id="honors" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Honors &amp; Awards</h2>
+            <p class="section-subtitle">
+              A collection of some awards and honors recognizing my achievements in academics, research, and various activities.
+            </p>
+          </div>
+
+          <div class="notion-list-wrap">
+            <ul class="notion-list">
+              <li>
+                <strong>Global Korea Scholarship (GKS) Fellow - National Top AI Talent selected by Korea Government</strong>
+              </li>
+              <li>
+                U.S. Army Achievement Medal
+                <ul class="notion-sublist">
+                  <li>Awarded by U.S. Army for outstanding service and leadership.</li>
+                </ul>
+              </li>
+              <li>
+                Certificate of Achievement
+                <ul class="notion-sublist">
+                  <li>Recognized for excellence by U.S. Army command leadership.</li>
+                </ul>
+              </li>
+              <li>
+                Konkuk University Global Leader Scholarship - Full-ride Tuition Exemption
+                <ul class="notion-sublist">
+                  <li>Awarded to top 1–2% of incoming students for outstanding academic excellence.</li>
+                </ul>
+              </li>
+              <li>
+                Grand Prize, International Personal Air Vehicle Technology Competition
+                <ul class="notion-sublist">
+                  <li>Recognized for developing an autonomous VTOL aircraft with AI vision.</li>
+                </ul>
+              </li>
+              <li>
+                Excellence Award, 2023 Metaverse Developer Competition
+                <ul class="notion-sublist">
+                  <li>Built a metaverse art auction platform combining AI and blockchain.</li>
+                </ul>
+              </li>
+              <li>
+                KU Super Rookie Fellowship
+                <ul class="notion-sublist">
+                  <li>Awarded as Certified Talents of Konkuk University</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Image Slide -->
+          <div class="cy-carousel" id="honorsCarousel" aria-label="Honors and Certificates Gallery">
+            <div class="cy-carousel-header">
+              <span class="cy-carousel-badge">🏅 Certificates &amp; Awards</span>
+              <span class="cy-carousel-counter">1 / 5</span>
             </div>
-            <button type="button" class="cy-carousel-nav cy-carousel-prev" aria-label="Previous image">‹</button>
-            <button type="button" class="cy-carousel-nav cy-carousel-next" aria-label="Next image">›</button>
-          </div>
-          <div class="cy-carousel-dots" role="tablist" aria-label="Slide selector">
-            <button type="button" class="cy-carousel-dot is-active" aria-label="Slide 1"></button>
-            <button type="button" class="cy-carousel-dot" aria-label="Slide 2"></button>
-            <button type="button" class="cy-carousel-dot" aria-label="Slide 3"></button>
-            <button type="button" class="cy-carousel-dot" aria-label="Slide 4"></button>
-            <button type="button" class="cy-carousel-dot" aria-label="Slide 5"></button>
-          </div>
-        </div>
-      </section>
-
-      <hr class="section-divider" />
-
-      <!-- Press & News -->
-      <section id="press" class="content-section">
-        <div class="section-header">
-          <h2 class="section-title">Press &amp; News</h2>
-          <p class="section-subtitle">
-            Discover featured articles and news stories covering my accomplishments and participation in various events.
-          </p>
-        </div>
-
-        <div class="notion-list-wrap">
-          <ul class="notion-list press-list">
-            <li>
-              <strong>[Konkuk University] Bridging Virtual and Real in the XR Era: An Interview with Changyu Lee, Korean Government Scholarship Fellow</strong>
-              <p><a href="https://m.blog.naver.com/dreamkonkuk/223986310248" target="_blank" rel="noopener noreferrer">[건국대] 가상과 현실을 잇는 다리, XR 시대를 향해: 국비유학생 이찬규 동문 인터뷰 : 네이버 블로그</a></p>
-            </li>
-            <li>
-              Prompt-er Day Seoul 2023 (2023.09.25)
-              <p>Hosted by OpenAI &amp; SK Telecom</p>
-              <p><a href="https://www.yna.co.kr/view/AKR20230925020100017" target="_blank" rel="noopener noreferrer">[Article] SK Telecom and OpenAI host global AI hackathon | Yonhap News</a></p>
-            </li>
-            <li>
-              [JoongAng Ilbo] Patents, startups... Spotlight on the 'Super Rookie' Innovation Talent Program (2023.02.22)
-              <p><a href="https://www.joongang.co.kr/article/25142214#home" target="_blank" rel="noopener noreferrer">Patents, Startups... Spotlight on the 'Super Rookie' Innovation Talent Program | JoongAng Ilbo</a></p>
-              <p><a href="http://www.konkuk.ac.kr/Administration/Pub/jsp/New/today_01.jsp?src=/do/MessageBoard/ArticleRead.do?forum=today&sort=6&id=5b50153&urlYn=Y" target="_blank" rel="noopener noreferrer">Konkuk University PR Office</a></p>
-            </li>
-            <li>
-              [JoongAng Ilbo LA] "Contributing to society through data analysis" — Korean American Software Hackathon event (2022.07.26)
-              <p><a href="https://news.koreadaily.com/2022/07/25/society/community/20220725194041499.html" target="_blank" rel="noopener noreferrer">"Contributing to society through data analysis" — Korean American Software Hackathon event</a></p>
-            </li>
-            <li>
-              [NEWSIS] Konkuk University’s ‘KU:AR’ team wins Grand Prize at International PAV Technology Competition in Sacheon
-              <p><a href="https://www.newsis.com/view/?id=NISX20221023_0002057775" target="_blank" rel="noopener noreferrer">Konkuk University’s ‘KU:AR’ team wins Grand Prize at International PAV Technology Competition :: NEWSIS</a></p>
-            </li>
-            <li>
-              [Gyeonggi Ilbo] [ZDNet Korea] Gyeonggi Content Agency’s 2022 Metaverse Academy Hackathon — Grand Prize awarded to ‘COCO’
-              <p><a href="https://www.kgnews.co.kr/news/article.html?no=728181" target="_blank" rel="noopener noreferrer">Gyeonggi Content Agency’s 2022 Metaverse Academy Hackathon — Grand Prize awarded to ‘COCO’ (kgnews.co.kr)</a></p>
-            </li>
-            <li>
-              [Konkuk University PR Office] Konkuk University holds awards ceremony for the 2021 KU Medical Hackathon (2021.10.20)
-              <p><a href="https://kumedia.konkuk.ac.kr/news/articleView.html?idxno=11655" target="_blank" rel="noopener noreferrer">KU Media</a></p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <hr class="section-divider" />
-
-      <!-- Others -->
-      <section id="others" class="content-section">
-        <div class="section-header">
-          <h2 class="section-title">Others</h2>
-        </div>
-
-        <div class="notion-list-wrap">
-          <ul class="notion-list others-list">
-            <li>
-              Advisors and mentors I hold in the highest regard
-              <p>Prof. Sangho Kim, Konkuk Univ.</p>
-              <p>Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener noreferrer">Jaegul Choo</a>, KAIST AI</p>
-              <p>Prof. Yonggyun Lee, Nestyle Intelligence</p>
-              <p>Prof. Jakyoung Min, Sejong Univ.</p>
-              <p>Prof. Jeongheon Seo, Konkuk Univ.</p>
-            </li>
-            <li>
-              My Faithful Vision for 2025
-              <p class="vision-text">To walk the path prepared by God with integrity of heart and skillful hands.</p>
-              <aside class="callout">
-                <span class="callout-icon" aria-hidden="true">📖</span>
-                <p>Life-time verse: Matthew 16:16</p>
-              </aside>
-            </li>
-            <li>
-              My Hobby? Working Out!!
-              <div>
-                <img class="hobby-photo" src="assets/images/hobby-workout.png" alt="Working out hobby" data-zoomable />
+            <div class="cy-carousel-viewport">
+              <div class="cy-carousel-track">
+                <div class="cy-carousel-slide">
+                  <img src="assets/images/honor-1.jpg" alt="U.S. Army Award 1" data-zoomable />
+                </div>
+                <div class="cy-carousel-slide">
+                  <img src="assets/images/honor-2.jpg" alt="U.S. Army Award 2" data-zoomable />
+                </div>
+                <div class="cy-carousel-slide">
+                  <img src="assets/images/honor-3-scholarship.jpg" alt="Konkuk University Global Leader Scholarship Certificate" data-zoomable />
+                </div>
+                <div class="cy-carousel-slide">
+                  <img src="assets/images/honor-4.png" alt="Award Certificate 4" data-zoomable />
+                </div>
+                <div class="cy-carousel-slide">
+                  <img src="assets/images/honor-5.png" alt="Award Certificate 5" data-zoomable />
+                </div>
               </div>
-            </li>
-            <li>
-              Big Fan of ‘Silica Gel‘ &amp; E-SENS
-              <div class="media-grid">
-                <a class="youtube-card" href="https://www.youtube.com/watch?v=JaIMSzE5yLA" target="_blank" rel="noopener noreferrer">
-                  <div class="youtube-thumb">
-                    <img src="https://i.ytimg.com/vi/JaIMSzE5yLA/hqdefault.jpg" alt="No Pain by Silica Gel" loading="lazy" />
-                    <div class="youtube-play"><span>▶</span></div>
-                  </div>
-                  <div class="youtube-caption">No Pain by Silica Gel</div>
-                </a>
-                <a class="youtube-card" href="https://www.youtube.com/watch?v=xPBNKJ6C0pg" target="_blank" rel="noopener noreferrer">
-                  <div class="youtube-thumb">
-                    <img src="https://i.ytimg.com/vi/xPBNKJ6C0pg/hqdefault.jpg" alt="Unknown Verses by E SENS" loading="lazy" />
-                    <div class="youtube-play"><span>▶</span></div>
-                  </div>
-                  <div class="youtube-caption">Unknown Verses by E SENS</div>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+              <button type="button" class="cy-carousel-nav cy-carousel-prev" aria-label="Previous image">‹</button>
+              <button type="button" class="cy-carousel-nav cy-carousel-next" aria-label="Next image">›</button>
+            </div>
+            <div class="cy-carousel-dots" role="tablist" aria-label="Slide selector">
+              <button type="button" class="cy-carousel-dot is-active" aria-label="Slide 1"></button>
+              <button type="button" class="cy-carousel-dot" aria-label="Slide 2"></button>
+              <button type="button" class="cy-carousel-dot" aria-label="Slide 3"></button>
+              <button type="button" class="cy-carousel-dot" aria-label="Slide 4"></button>
+              <button type="button" class="cy-carousel-dot" aria-label="Slide 5"></button>
+            </div>
+          </div>
+        </section>
 
-      <footer class="site-footer">
-        © Changyu (Chan) Lee
-      </footer>
+        <hr class="section-divider" />
+
+        <!-- Press & News -->
+        <section id="press" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Press &amp; News</h2>
+            <p class="section-subtitle">
+              Discover featured articles and news stories covering my accomplishments and participation in various events.
+            </p>
+          </div>
+
+          <div class="notion-list-wrap">
+            <ul class="notion-list press-list">
+              <li>
+                <strong>[Konkuk University] Bridging Virtual and Real in the XR Era: An Interview with Changyu Lee, Korean Government Scholarship Fellow</strong>
+                <p><a href="https://m.blog.naver.com/dreamkonkuk/223986310248" target="_blank" rel="noopener noreferrer">[건국대] 가상과 현실을 잇는 다리, XR 시대를 향해: 국비유학생 이찬규 동문 인터뷰 : 네이버 블로그</a></p>
+              </li>
+              <li>
+                Prompt-er Day Seoul 2023 (2023.09.25)
+                <p>Hosted by OpenAI &amp; SK Telecom</p>
+                <p><a href="https://www.yna.co.kr/view/AKR20230925020100017" target="_blank" rel="noopener noreferrer">[Article] SK Telecom and OpenAI host global AI hackathon | Yonhap News</a></p>
+              </li>
+              <li>
+                [JoongAng Ilbo] Patents, startups... Spotlight on the 'Super Rookie' Innovation Talent Program (2023.02.22)
+                <p><a href="https://www.joongang.co.kr/article/25142214#home" target="_blank" rel="noopener noreferrer">Patents, Startups... Spotlight on the 'Super Rookie' Innovation Talent Program | JoongAng Ilbo</a></p>
+                <p><a href="http://www.konkuk.ac.kr/Administration/Pub/jsp/New/today_01.jsp?src=/do/MessageBoard/ArticleRead.do?forum=today&sort=6&id=5b50153&urlYn=Y" target="_blank" rel="noopener noreferrer">Konkuk University PR Office</a></p>
+              </li>
+              <li>
+                [JoongAng Ilbo LA] "Contributing to society through data analysis" — Korean American Software Hackathon event (2022.07.26)
+                <p><a href="https://news.koreadaily.com/2022/07/25/society/community/20220725194041499.html" target="_blank" rel="noopener noreferrer">"Contributing to society through data analysis" — Korean American Software Hackathon event</a></p>
+              </li>
+              <li>
+                [NEWSIS] Konkuk University’s ‘KU:AR’ team wins Grand Prize at International PAV Technology Competition in Sacheon
+                <p><a href="https://www.newsis.com/view/?id=NISX20221023_0002057775" target="_blank" rel="noopener noreferrer">Konkuk University’s ‘KU:AR’ team wins Grand Prize at International PAV Technology Competition :: NEWSIS</a></p>
+              </li>
+              <li>
+                [Gyeonggi Ilbo] [ZDNet Korea] Gyeonggi Content Agency’s 2022 Metaverse Academy Hackathon — Grand Prize awarded to ‘COCO’
+                <p><a href="https://www.kgnews.co.kr/news/article.html?no=728181" target="_blank" rel="noopener noreferrer">Gyeonggi Content Agency’s 2022 Metaverse Academy Hackathon — Grand Prize awarded to ‘COCO’ (kgnews.co.kr)</a></p>
+              </li>
+              <li>
+                [Konkuk University PR Office] Konkuk University holds awards ceremony for the 2021 KU Medical Hackathon (2021.10.20)
+                <p><a href="https://kumedia.konkuk.ac.kr/news/articleView.html?idxno=11655" target="_blank" rel="noopener noreferrer">KU Media</a></p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <hr class="section-divider" />
+
+        <!-- Others -->
+        <section id="others" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Others</h2>
+          </div>
+
+          <div class="notion-list-wrap">
+            <ul class="notion-list others-list">
+              <li>
+                Advisors and mentors I hold in the highest regard
+                <p>Prof. Sangho Kim, Konkuk Univ.</p>
+                <p>Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener noreferrer">Jaegul Choo</a>, KAIST AI</p>
+                <p>Prof. Yonggyun Lee, Nestyle Intelligence</p>
+                <p>Prof. Jakyoung Min, Sejong Univ.</p>
+                <p>Prof. Jeongheon Seo, Konkuk Univ.</p>
+              </li>
+              <li>
+                My Faithful Vision for 2025
+                <p class="vision-text">To walk the path prepared by God with integrity of heart and skillful hands.</p>
+                <aside class="callout">
+                  <span class="callout-icon" aria-hidden="true">📖</span>
+                  <p>Life-time verse: Matthew 16:16</p>
+                </aside>
+              </li>
+              <li>
+                My Hobby? Working Out!!
+                <div>
+                  <img class="hobby-photo" src="assets/images/hobby-workout.png" alt="Working out hobby" data-zoomable />
+                </div>
+              </li>
+              <li>
+                Big Fan of ‘Silica Gel‘ &amp; E-SENS
+                <div class="media-grid">
+                  <a class="youtube-card" href="https://www.youtube.com/watch?v=JaIMSzE5yLA" target="_blank" rel="noopener noreferrer">
+                    <div class="youtube-thumb">
+                      <img src="https://i.ytimg.com/vi/JaIMSzE5yLA/hqdefault.jpg" alt="No Pain by Silica Gel" loading="lazy" />
+                      <div class="youtube-play"><span>▶</span></div>
+                    </div>
+                    <div class="youtube-caption">No Pain by Silica Gel</div>
+                  </a>
+                  <a class="youtube-card" href="https://www.youtube.com/watch?v=xPBNKJ6C0pg" target="_blank" rel="noopener noreferrer">
+                    <div class="youtube-thumb">
+                      <img src="https://i.ytimg.com/vi/xPBNKJ6C0pg/hqdefault.jpg" alt="Unknown Verses by E SENS" loading="lazy" />
+                      <div class="youtube-play"><span>▶</span></div>
+                    </div>
+                    <div class="youtube-caption">Unknown Verses by E SENS</div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          © Changyu (Chan) Lee
+        </footer>
+      </div>
     </main>
   </div>
 
