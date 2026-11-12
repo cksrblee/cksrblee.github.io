@@ -7,14 +7,14 @@
 }
 
 :root {
-  --bg: #FAF9F6;
-  --sidebar-bg: #F2EFE9;
+  --bg: #FFFFFF;
+  --sidebar-bg: #F7F7F9;
   --sidebar-width: 280px;
   --text: #18181B;
   --text-muted: #52525B;
   --text-subtle: #71717A;
   --accent: #A61766;
-  --divider: #E5E0D8;
+  --divider: #E6E8EC;
   --surface: #FFFFFF;
   --shadow: 0 1px 2px rgba(24, 24, 27, 0.04), 0 4px 14px rgba(24, 24, 27, 0.03);
   --shadow-hover: 0 6px 16px rgba(24, 24, 27, 0.07), 0 10px 24px rgba(166, 23, 102, 0.08);
@@ -495,7 +495,7 @@ img {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(24, 24, 27, 0.06);
-  background: #F6F4F0;
+  background: #F4F5F7;
 }
 
 .highlight-media img,
@@ -522,19 +522,19 @@ img {
 }
 
 .highlight-media--spatial {
-  background: linear-gradient(135deg, #F3F1EC 0%, #ECE8E1 100%);
+  background: linear-gradient(135deg, #F4F5F8 0%, #ECEEF3 100%);
 }
 
 .highlight-media--rag {
-  background: linear-gradient(135deg, #F5EFF3 0%, #EFE6EC 100%);
+  background: linear-gradient(135deg, #F6F1F5 0%, #EFE8EE 100%);
 }
 
 .highlight-media--uav {
-  background: linear-gradient(135deg, #EEF1F4 0%, #E7ECEF 100%);
+  background: linear-gradient(135deg, #F1F4F7 0%, #E8EDF2 100%);
 }
 
 .highlight-media--xr {
-  background: linear-gradient(135deg, #F4F2EE 0%, #ECE7E2 100%);
+  background: linear-gradient(135deg, #F4F4F6 0%, #ECECEF 100%);
 }
 
 .highlight-body {
@@ -724,7 +724,7 @@ img {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(24, 24, 27, 0.06);
-  background: #F6F4F0;
+  background: #F4F5F7;
   display: block;
 }
 
@@ -822,7 +822,7 @@ img {
 /* ===== Honors Carousel ===== */
 .cy-carousel {
   margin: 0;
-  background: #F4F1EC;
+  background: #F7F7F9;
   border-radius: 16px;
   padding: 14px 14px 12px;
   border: 1px solid var(--divider);
@@ -1348,7 +1348,7 @@ img {
 }
 
 .blog-post-row:hover {
-  background-color: rgba(229, 224, 216, 0.35);
+  background-color: rgba(244, 245, 247, 0.7);
   color: inherit;
 }
 
