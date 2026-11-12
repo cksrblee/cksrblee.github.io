@@ -5,7 +5,7 @@
     var closeBtn = document.getElementById("cyChatClose");
     var iframe = overlay ? overlay.querySelector("iframe") : null;
 
-    if (!btn || !overlay || !closeBtn) return;
+    if (!btn || btn.disabled || !overlay || !closeBtn) return;
 
     function openModal() {
       if (iframe && !iframe.getAttribute("src") && iframe.dataset.src) {

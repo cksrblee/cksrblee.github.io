@@ -358,10 +358,17 @@ img {
   box-shadow: 0 4px 12px rgba(166, 23, 102, 0.22);
 }
 
-.cy-chat-btn:hover {
+.cy-chat-btn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(166, 23, 102, 0.3);
   filter: brightness(1.04);
+}
+
+.cy-chat-btn:disabled {
+  background: #E6E8EC;
+  color: var(--text-subtle);
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 .cy-chat-overlay {

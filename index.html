@@ -112,8 +112,8 @@
               Ask me anything about my research, projects, or experience.
               My AI assistant is here to help!
             </p>
-            <button type="button" class="cy-chat-btn" id="cyChatBtn">
-              💬 Chat with Chan's AI
+            <button type="button" class="cy-chat-btn" id="cyChatBtn" disabled aria-disabled="true">
+              💬 Chat with Chan's AI (Coming Soon)
             </button>
           </div>
         </section>
@@ -632,13 +632,7 @@
         <span>💬 Ask Changyu</span>
         <button type="button" class="cy-chat-close" id="cyChatClose" aria-label="Close chat">×</button>
       </div>
-      <div class="cy-chat-body">
-        <iframe
-          data-src="https://vowkivmk.gensparkclaw.com/chatbot/"
-          allow="microphone"
-          title="Chatbot">
-        </iframe>
-      </div>
+      <div class="cy-chat-body" id="cyChatBody"></div>
     </div>
   </div>
 
