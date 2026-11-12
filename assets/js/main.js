@@ -112,9 +112,34 @@
     var closeBtn = document.getElementById("cyLightboxClose");
     if (!lightbox || !lightboxImg || !closeBtn) return;
 
-    function openLightbox(src, alt) {
-      lightboxImg.src = src;
-      lightboxImg.alt = alt || "";
+    var lightboxVideo = document.createElement("video");
+    lightboxVideo.controls = true;
+    lightboxVideo.autoplay = true;
+    lightboxVideo.loop = true;
+    lightboxVideo.playsInline = true;
+    lightboxVideo.style.display = "none";
+    lightboxVideo.style.maxWidth = "92vw";
+    lightboxVideo.style.maxHeight = "88vh";
+    lightboxVideo.style.borderRadius = "10px";
+    lightboxVideo.style.boxShadow = "0 20px 60px rgba(0, 0, 0, 0.45)";
+    lightbox.appendChild(lightboxVideo);
+
+    function openLightbox(el) {
+      var isVideo = el.tagName.toLowerCase() === "video";
+      if (isVideo) {
+        lightboxImg.style.display = "none";
+        lightboxImg.src = "";
+        lightboxVideo.src = el.currentSrc || el.src;
+        lightboxVideo.style.display = "block";
+        lightboxVideo.play().catch(function () {});
+      } else {
+        lightboxVideo.pause();
+        lightboxVideo.style.display = "none";
+        lightboxVideo.src = "";
+        lightboxImg.src = el.src;
+        lightboxImg.alt = el.alt || "";
+        lightboxImg.style.display = "block";
+      }
       lightbox.classList.add("is-open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -124,12 +149,14 @@
       lightbox.classList.remove("is-open");
       lightbox.setAttribute("aria-hidden", "true");
       lightboxImg.src = "";
+      lightboxVideo.pause();
+      lightboxVideo.src = "";
       document.body.style.overflow = "";
     }
 
-    document.querySelectorAll("[data-zoomable]").forEach(function (img) {
-      img.addEventListener("click", function () {
-        openLightbox(img.src, img.alt);
+    document.querySelectorAll("[data-zoomable]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        openLightbox(el);
       });
     });
 

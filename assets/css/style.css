@@ -497,7 +497,7 @@ img {
   color: var(--text-subtle);
 }
 
-/* ===== Highlights Grid ===== */
+/* ===== Highlights Grid (Media Preview + Non-bold Showcase) ===== */
 .highlights-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -505,7 +505,10 @@ img {
 }
 
 .highlight-card {
-  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
   border-radius: 14px;
   background: #ffffff;
   border: 1px solid rgba(226, 232, 240, 0.95);
@@ -519,25 +522,90 @@ img {
   border-color: rgba(166, 23, 102, 0.3);
 }
 
-.highlight-eyebrow {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 6px;
+.highlight-media {
+  width: 148px;
+  height: 108px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #f8fafc;
+}
+
+.highlight-media img,
+.highlight-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+.highlight-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.highlight-media--spatial {
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(155, 109, 255, 0.12));
+}
+
+.highlight-media--rag {
+  background: linear-gradient(135deg, rgba(155, 109, 255, 0.1), rgba(255, 107, 157, 0.12));
+}
+
+.highlight-media--uav {
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(255, 165, 82, 0.14));
+}
+
+.highlight-media--xr {
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(255, 165, 82, 0.12));
+}
+
+.highlight-body {
+  min-width: 0;
+  flex: 1;
 }
 
 .highlight-heading {
-  margin: 0 0 6px;
-  font-size: 1.02rem;
-  font-weight: 650;
+  margin: 0 0 5px;
+  font-size: 0.98rem;
+  font-weight: 400;
   color: var(--text);
+  line-height: 1.35;
 }
 
 .highlight-text {
-  margin: 0;
-  font-size: 0.9rem;
+  margin: 0 0 8px;
+  font-size: 0.86rem;
+  font-weight: 400;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.45;
+}
+
+.highlight-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.highlight-tag {
+  font-size: 0.73rem;
+  font-weight: 400;
+  color: #566A8E;
+  background: rgba(86, 106, 142, 0.08);
+  border: 1px solid rgba(86, 106, 142, 0.16);
+  padding: 1px 7px;
+  border-radius: 5px;
 }
 
 /* ===== Experience & Education 2-Column Grid on Desktop ===== */
@@ -1168,6 +1236,16 @@ img {
   .experience-logo img {
     width: 40px;
     height: 40px;
+  }
+
+  .highlight-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .highlight-media {
+    width: 100%;
+    height: 140px;
   }
 }
 
