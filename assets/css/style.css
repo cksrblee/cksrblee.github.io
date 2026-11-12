@@ -279,11 +279,7 @@ img {
 
 .cy-name-block .cy-name {
   display: block;
-  background: linear-gradient(100deg, #0a0a0a 0%, #4285f4 24%, #9b6dff 52%, #ff6b9d 76%, #ffa552 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--accent);
   padding-bottom: 0.12em;
   overflow: visible;
 }
@@ -1154,10 +1150,6 @@ img {
   .cy-name-block .cy-h1 {
     font-size: clamp(38px, 9.5vw, 80px);
     line-height: 1;
-  }
-
-  .cy-name-block .cy-role {
-    font-size: 1em;
   }
 
   /* 2. Compact Photo + Basic Info */
