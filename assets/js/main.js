@@ -144,9 +144,40 @@
     });
   }
 
+  function initScrollSpy() {
+    var navLinks = document.querySelectorAll(".sidebar-nav-link");
+    var sections = document.querySelectorAll(".content-section[id]");
+    if (!navLinks.length || !sections.length || !("IntersectionObserver" in window)) return;
+
+    function setActive(id) {
+      navLinks.forEach(function (link) {
+        link.classList.toggle("is-active", link.dataset.section === id);
+      });
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -65% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach(function (sec) {
+      observer.observe(sec);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initChatbot();
     initCarousel();
     initLightbox();
+    initScrollSpy();
   });
 })();
