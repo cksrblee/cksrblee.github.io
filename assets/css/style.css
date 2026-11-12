@@ -243,17 +243,16 @@ img {
 
 .split-main::before {
   content: "";
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
-  left: var(--sidebar-width);
+  left: 0;
+  height: 520px;
   pointer-events: none;
   z-index: -1;
   background:
-    radial-gradient(760px 380px at 18% 6%, rgba(66, 133, 244, 0.055), transparent 70%),
-    radial-gradient(640px 380px at 88% 12%, rgba(255, 107, 157, 0.055), transparent 70%),
-    radial-gradient(720px 420px at 55% 68%, rgba(155, 109, 255, 0.035), transparent 70%);
+    radial-gradient(760px 380px at 18% 12%, rgba(66, 133, 244, 0.06), transparent 70%),
+    radial-gradient(640px 380px at 88% 20%, rgba(255, 107, 157, 0.06), transparent 70%);
 }
 
 .main-inner {
@@ -293,24 +292,13 @@ img {
 
 .cy-name-block .cy-name {
   display: block;
-  background: linear-gradient(100deg, #0a0a0a 0%, #4285f4 18%, #9b6dff 32%, #ff6b9d 46%, #ffa552 60%, #9b6dff 74%, #4285f4 88%, #0a0a0a 100%);
-  background-size: 300% 100%;
+  background: linear-gradient(100deg, #0a0a0a 0%, #4285f4 24%, #9b6dff 52%, #ff6b9d 76%, #ffa552 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: cysh 30s ease-in-out infinite;
-  filter: drop-shadow(0 0 18px rgba(155, 109, 255, 0.12));
   padding-bottom: 0.12em;
   overflow: visible;
-}
-
-@keyframes cysh {
-  0% { background-position: 200% 50%; }
-  30% { background-position: 0% 50%; }
-  40% { background-position: 0% 50%; }
-  70% { background-position: -200% 50%; }
-  100% { background-position: -200% 50%; }
 }
 
 .cy-name-block .cy-role {
@@ -332,7 +320,6 @@ img {
   margin-left: 0.12em;
   vertical-align: middle;
   border-radius: 2px;
-  box-shadow: 0 0 20px rgba(255, 107, 157, 0.6);
   animation: cybl 1.1s steps(2) infinite;
 }
 
@@ -362,35 +349,13 @@ img {
   width: 100%;
   padding: 20px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  background: #ffffff;
+  border: 1.5px solid rgba(155, 109, 255, 0.28);
   box-shadow: 0 4px 20px rgba(155, 109, 255, 0.08);
   display: flex;
   flex-direction: column;
   gap: 12px;
   position: relative;
-  overflow: hidden;
-}
-
-.cy-chat-inline::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1.5px;
-  background: linear-gradient(135deg, #4285f4, #9b6dff, #ff6b9d, #ffa552);
-  background-size: 300% 300%;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0.6;
-  pointer-events: none;
-  animation: cyBorderFlow 8s linear infinite;
-}
-
-@keyframes cyBorderFlow {
-  to { background-position: 300% 50%; }
 }
 
 .cy-chat-title {
@@ -416,7 +381,6 @@ img {
   border: none;
   border-radius: 10px;
   background: linear-gradient(135deg, #9b6dff, #ff6b9d, #ffa552);
-  background-size: 200% 200%;
   color: #fff;
   font-weight: 600;
   font-size: 9.5pt;
@@ -425,33 +389,26 @@ img {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: cyChatGlow 5s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   box-shadow: 0 4px 14px rgba(155, 109, 255, 0.25);
 }
 
 .cy-chat-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(155, 109, 255, 0.4);
-}
-
-@keyframes cyChatGlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  box-shadow: 0 8px 20px rgba(155, 109, 255, 0.38);
+  filter: brightness(1.03);
 }
 
 .cy-chat-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 10, 30, 0.42);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(10, 10, 30, 0.56);
   z-index: 99999;
   display: none;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .cy-chat-overlay.cy-open {
@@ -468,8 +425,8 @@ img {
   display: flex;
   flex-direction: column;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
-  transform: translateY(20px) scale(0.96);
-  transition: transform 0.35s cubic-bezier(0.4, 1.5, 0.5, 1);
+  transform: translateY(16px) scale(0.97);
+  transition: transform 0.25s ease;
 }
 
 .cy-chat-overlay.cy-open .cy-chat-modal {
@@ -479,14 +436,12 @@ img {
 .cy-chat-header {
   padding: 16px 20px;
   background: linear-gradient(100deg, #4285f4, #9b6dff, #ff6b9d);
-  background-size: 200% 100%;
   color: #fff;
   font-weight: 600;
   font-size: 13pt;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: cyChatGlow 6s ease-in-out infinite;
 }
 
 .cy-chat-close {
@@ -542,6 +497,49 @@ img {
   color: var(--text-subtle);
 }
 
+/* ===== Highlights Grid ===== */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.highlight-card {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(166, 23, 102, 0.3);
+}
+
+.highlight-eyebrow {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.highlight-heading {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.highlight-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
 /* ===== Experience & Education 2-Column Grid on Desktop ===== */
 .experience-wrapper {
   margin: 0;
@@ -558,19 +556,16 @@ img {
   position: relative;
   display: flex;
   gap: 14px;
-  background: var(--surface);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
   border-radius: 14px;
   padding: 18px 20px;
   box-shadow: var(--shadow);
-  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .experience-item:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-hover);
 }
 
@@ -838,8 +833,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 100000;
-  background: rgba(10, 10, 20, 0.85);
-  backdrop-filter: blur(6px);
+  background: rgba(10, 10, 20, 0.88);
   display: none;
   align-items: center;
   justify-content: center;
@@ -1106,6 +1100,7 @@ img {
     order: 7;
   }
 
+  .highlights-grid,
   .cards-grid-2,
   .honors-split {
     grid-template-columns: 1fr;
