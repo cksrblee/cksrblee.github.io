@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'HSSanTokki20-Regular';
+  src: url('../fonts/HSSanTokki20-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #ffffff;
   --sidebar-bg: #f3f4f6;
@@ -266,14 +274,14 @@ img {
   width: 100%;
   text-align: left;
   padding: 0 0 18px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'HSSanTokki20-Regular', sans-serif;
 }
 
 .cy-name-block .cy-h1 {
   font-size: clamp(40px, 4.8vw, 64px);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1.03;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
   margin: 0;
 }
 
