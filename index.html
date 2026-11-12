@@ -241,17 +241,25 @@
         <section id="experience" class="content-section">
           <div class="section-header">
             <h2 class="section-title">Experience</h2>
-            <p class="section-subtitle">Connecting Dots</p>
+            <p class="section-subtitle">Connecting Dots · Click any milestone for details</p>
           </div>
 
-          <div class="experience-wrapper cards-grid-2">
-            <article class="experience-item">
-              <div class="experience-logo">
-                <img src="assets/images/logo-usc.png" alt="USC Logo" />
-              </div>
-              <div class="experience-details">
-                <div class="experience-role">Researcher</div>
-                <div class="experience-company">Integrated Media Systems Center, USC</div>
+          <div class="exp-timeline">
+            <article class="exp-node is-current">
+              <div class="exp-date">Sep 2025 – Present</div>
+              <div class="exp-track" aria-hidden="true"><span class="exp-dot"></span></div>
+              <button type="button" class="exp-card">
+                <span class="exp-logo"><img src="assets/images/logo-usc.png" alt="USC Logo" /></span>
+                <span class="exp-summary">
+                  <span class="exp-heading">
+                    <span class="exp-role">Researcher</span>
+                    <span class="exp-org">Integrated Media Systems Center, USC</span>
+                  </span>
+                  <span class="exp-impact">Geospatial × VLM 3D spatial intelligence &amp; IEEE BigData 2026 short paper</span>
+                </span>
+                <span class="exp-more" aria-hidden="true">Details →</span>
+              </button>
+              <div class="exp-detail-source" hidden>
                 <div class="experience-meta">
                   Sep 2025 – Present · Los Angeles, United States<br />
                   Advisor: Dr. Seon Ho Kim (Associate Director)
@@ -265,35 +273,51 @@
               </div>
             </article>
 
-            <article class="experience-item">
-              <div class="experience-logo">
-                <img src="assets/images/logo-kaist.jpg" alt="KAIST Logo" />
-              </div>
-              <div class="experience-details">
-                <div class="experience-role">Research Engineer</div>
-                <div class="experience-company">Korea Advanced Institute of Science and Technology · Internship</div>
+            <article class="exp-node">
+              <div class="exp-date">Jul 2023 – Aug 2025</div>
+              <div class="exp-track" aria-hidden="true"><span class="exp-dot"></span></div>
+              <button type="button" class="exp-card">
+                <span class="exp-logo"><img src="assets/images/logo-kaist.jpg" alt="KAIST Logo" /></span>
+                <span class="exp-summary">
+                  <span class="exp-heading">
+                    <span class="exp-role">Research Engineer</span>
+                    <span class="exp-org">KAIST · DAVIAN Lab (Internship)</span>
+                  </span>
+                  <span class="exp-impact">Joint LLM &amp; agentic RAG research collaboration under Prof. Jaegul Choo</span>
+                </span>
+                <span class="exp-more" aria-hidden="true">Details →</span>
+              </button>
+              <div class="exp-detail-source" hidden>
                 <div class="experience-meta">
                   Jul 2023 – Aug 2025 · 2 yrs 1 mon · South Korea · Hybrid<br />
-                  Advisor: Prof Jaegul Choo, DAVIAN Lab.
+                  Advisor: Prof. Jaegul Choo, DAVIAN Lab.
                 </div>
                 <div class="skill-tags">
-                  Skills: OpenAI API &nbsp;·&nbsp; LangChain &nbsp;·&nbsp; AI &nbsp;·&nbsp; Large Language Models (LLM) &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; LangGraph
+                  Skills: OpenAI API · LangChain · AI · Large Language Models (LLM) · FastAPI · LangGraph
                 </div>
               </div>
             </article>
 
-            <article class="experience-item">
-              <div class="experience-logo">
-                <img src="assets/images/logo-nestyle.jpg" alt="NESTYLE Logo" />
-              </div>
-              <div class="experience-details">
-                <div class="experience-role">Research Engineer</div>
-                <div class="experience-company">NESTYLE · Full-time</div>
+            <article class="exp-node">
+              <div class="exp-date">Jul 2023 – Aug 2025</div>
+              <div class="exp-track" aria-hidden="true"><span class="exp-dot"></span></div>
+              <button type="button" class="exp-card">
+                <span class="exp-logo"><img src="assets/images/logo-nestyle.jpg" alt="NESTYLE Logo" /></span>
+                <span class="exp-summary">
+                  <span class="exp-heading">
+                    <span class="exp-role">Research Engineer</span>
+                    <span class="exp-org">NESTYLE Intelligence · Full-time</span>
+                  </span>
+                  <span class="exp-impact">~40% MoM user growth · 2,000+ AI novels · 50%+ LLM token reduction</span>
+                </span>
+                <span class="exp-more" aria-hidden="true">Details →</span>
+              </button>
+              <div class="exp-detail-source" hidden>
                 <div class="experience-meta">Jul 2023 – Aug 2025 · 2 yrs 1 mon · Seoul, South Korea · Hybrid</div>
                 <ul class="experience-bullets">
-                  <li>Developed an AI-assisted web-novel writing platform by leveraging RAG processes and achieved over 50 % reduction in maximum token usage by Prompt Engineering.</li>
+                  <li>Developed an AI-assisted web-novel writing platform by leveraging RAG processes and achieved over 50% reduction in maximum token usage by Prompt Engineering.</li>
                   <li>Fine-tuned Hugging Face open-source models specialized for web novels and implemented Tools / Function Calling features to validate the concept of fully automated novel-generation AI agents.</li>
-                  <li>Led end-to-end system engineering and back-end API development, resulting in ~40 % average monthly user growth (for 1 year after launch) and 2 000 generated novels.</li>
+                  <li>Led end-to-end system engineering and back-end API development, resulting in ~40% average monthly user growth (for 1 year after launch) and 2,000 generated novels.</li>
                 </ul>
                 <div class="skill-tags">
                   Skills: OpenAI API · LangChain · Python · Large Language Models (LLM) · FastAPI · Prompt Engineering
@@ -301,13 +325,21 @@
               </div>
             </article>
 
-            <article class="experience-item">
-              <div class="experience-logo">
-                <img src="assets/images/logo-sejong.jpg" alt="Sejong University Logo" />
-              </div>
-              <div class="experience-details">
-                <div class="experience-role">Visiting Researcher</div>
-                <div class="experience-company">Sejong University · Part-time</div>
+            <article class="exp-node">
+              <div class="exp-date">Dec 2023 – May 2024</div>
+              <div class="exp-track" aria-hidden="true"><span class="exp-dot"></span></div>
+              <button type="button" class="exp-card">
+                <span class="exp-logo"><img src="assets/images/logo-sejong.jpg" alt="Sejong University Logo" /></span>
+                <span class="exp-summary">
+                  <span class="exp-heading">
+                    <span class="exp-role">Visiting Researcher</span>
+                    <span class="exp-org">Sejong University · Graduate School of Metaverse</span>
+                  </span>
+                  <span class="exp-impact">Built empathetic VR game <em>Buddyz</em> in Unity for stray-dog adoption</span>
+                </span>
+                <span class="exp-more" aria-hidden="true">Details →</span>
+              </button>
+              <div class="exp-detail-source" hidden>
                 <div class="experience-meta">Dec 2023 – May 2024 · 6 mos · Seoul, South Korea · Remote</div>
                 <ul class="experience-bullets">
                   <li>Conducted user-experience (UX) research, focusing on emotional or empathetic experiences in virtual worlds.</li>
@@ -317,29 +349,45 @@
               </div>
             </article>
 
-            <article class="experience-item">
-              <div class="experience-logo">
-                <img src="assets/images/logo-morphing-i.jpg" alt="Morphing I Inc. Logo" />
-              </div>
-              <div class="experience-details">
-                <div class="experience-role">Researcher</div>
-                <div class="experience-company">Morphing I Inc. · Internship</div>
+            <article class="exp-node">
+              <div class="exp-date">Jan 2023 – May 2023</div>
+              <div class="exp-track" aria-hidden="true"><span class="exp-dot"></span></div>
+              <button type="button" class="exp-card">
+                <span class="exp-logo"><img src="assets/images/logo-morphing-i.jpg" alt="Morphing I Inc. Logo" /></span>
+                <span class="exp-summary">
+                  <span class="exp-heading">
+                    <span class="exp-role">Researcher</span>
+                    <span class="exp-org">Morphing I Inc. · Internship</span>
+                  </span>
+                  <span class="exp-impact">Delivered $1.2M in NIPA R&amp;D PoCs across AI robotics &amp; Metaverse</span>
+                </span>
+                <span class="exp-more" aria-hidden="true">Details →</span>
+              </button>
+              <div class="exp-detail-source" hidden>
                 <div class="experience-meta">Jan 2023 – May 2023 · 5 mos · Seoul, South Korea · On-site</div>
                 <ul class="experience-bullets">
                   <li>Engaged in R&amp;D planning and execution in Metaverse, AI, and Blockchain domains.</li>
-                  <li>Key achievements include developing a Proof of Concept for an NFT Metaverse Gallery (National IT Industry Promotion Agency grant $0.2 M, 2022) and contributing to the AI Learning Data Construction Support Project by accumulating data on Jeju Island’s water-supply pipes using biomimetic robots (grant $1 M, 2023).</li>
+                  <li>Key achievements include developing a Proof of Concept for an NFT Metaverse Gallery (National IT Industry Promotion Agency grant $0.2M, 2022) and contributing to the AI Learning Data Construction Support Project by accumulating data on Jeju Island’s water-supply pipes using biomimetic robots (grant $1M, 2023).</li>
                 </ul>
                 <div class="skill-tags">Skills: Large Language Models (LLM)</div>
               </div>
             </article>
 
-            <article class="experience-item">
-              <div class="experience-logo">
-                <img src="assets/images/logo-konkuk.jpg" alt="Konkuk University Logo" />
-              </div>
-              <div class="experience-details">
-                <div class="experience-role">Undergraduate Research Assistant</div>
-                <div class="experience-company">Konkuk University · Full-time</div>
+            <article class="exp-node">
+              <div class="exp-date">Sep 2021 – Jan 2023</div>
+              <div class="exp-track" aria-hidden="true"><span class="exp-dot"></span></div>
+              <button type="button" class="exp-card">
+                <span class="exp-logo"><img src="assets/images/logo-konkuk.jpg" alt="Konkuk University Logo" /></span>
+                <span class="exp-summary">
+                  <span class="exp-heading">
+                    <span class="exp-role">Undergraduate Research Assistant</span>
+                    <span class="exp-org">Konkuk University · AAIC Lab</span>
+                  </span>
+                  <span class="exp-impact">AI-vision VTOL UAV landing (Int'l Grand Prize) &amp; HoloLens 2 AR UI</span>
+                </span>
+                <span class="exp-more" aria-hidden="true">Details →</span>
+              </button>
+              <div class="exp-detail-source" hidden>
                 <div class="experience-meta">
                   Sep 2021 – Jan 2023 · 1 yr 5 mos · Aerospace Artificial Intelligence Convergence Lab., Konkuk University · On-site
                 </div>
@@ -705,6 +753,23 @@
         <button type="button" class="cy-chat-close" id="cyChatClose" aria-label="Close chat">×</button>
       </div>
       <div class="cy-chat-body" id="cyChatBody"></div>
+    </div>
+  </div>
+
+  <!-- Experience Detail Modal -->
+  <div class="cy-exp-overlay" id="cyExpOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cyExpModalRole">
+    <div class="cy-exp-modal">
+      <div class="cy-exp-modal-header">
+        <div class="cy-exp-modal-title-wrap">
+          <img class="cy-exp-modal-logo" id="cyExpModalLogo" src="" alt="" />
+          <div>
+            <h3 class="cy-exp-modal-role" id="cyExpModalRole"></h3>
+            <p class="cy-exp-modal-org" id="cyExpModalOrg"></p>
+          </div>
+        </div>
+        <button type="button" class="cy-exp-modal-close" id="cyExpClose" aria-label="Close experience details">×</button>
+      </div>
+      <div class="cy-exp-modal-body" id="cyExpModalBody"></div>
     </div>
   </div>
 

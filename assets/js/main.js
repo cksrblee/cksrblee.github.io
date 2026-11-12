@@ -171,6 +171,68 @@
     });
   }
 
+  function initExperienceModal() {
+    var overlay = document.getElementById("cyExpOverlay");
+    var closeBtn = document.getElementById("cyExpClose");
+    var modalLogo = document.getElementById("cyExpModalLogo");
+    var modalRole = document.getElementById("cyExpModalRole");
+    var modalOrg = document.getElementById("cyExpModalOrg");
+    var modalBody = document.getElementById("cyExpModalBody");
+    var cards = document.querySelectorAll(".exp-node .exp-card");
+
+    if (!overlay || !closeBtn || !modalBody || !cards.length) return;
+
+    var lastTrigger = null;
+
+    function closeExpModal() {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastTrigger && typeof lastTrigger.focus === "function") {
+        lastTrigger.focus();
+      }
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        var node = card.closest(".exp-node");
+        if (!node) return;
+        var img = card.querySelector(".exp-logo img");
+        var roleEl = card.querySelector(".exp-role");
+        var orgEl = card.querySelector(".exp-org");
+        var detailEl = node.querySelector(".exp-detail-source");
+
+        if (modalLogo && img) {
+          modalLogo.src = img.getAttribute("src") || "";
+          modalLogo.alt = img.getAttribute("alt") || "";
+        }
+        if (modalRole && roleEl) {
+          modalRole.textContent = roleEl.textContent.trim();
+        }
+        if (modalOrg && orgEl) {
+          modalOrg.textContent = orgEl.textContent.trim();
+        }
+        modalBody.innerHTML = detailEl ? detailEl.innerHTML : "";
+
+        lastTrigger = card;
+        overlay.classList.add("is-open");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        closeBtn.focus();
+      });
+    });
+
+    closeBtn.addEventListener("click", closeExpModal);
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) closeExpModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+        closeExpModal();
+      }
+    });
+  }
+
   function initScrollSpy() {
     var navLinks = document.querySelectorAll(".sidebar-nav-link[data-section]");
     var sections = document.querySelectorAll(".content-section[id]");
@@ -392,6 +454,7 @@
     initChatbot();
     initCarousel();
     initLightbox();
+    initExperienceModal();
     initScrollSpy();
     initBlogList();
     initPostReader();

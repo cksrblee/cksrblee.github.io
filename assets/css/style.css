@@ -839,6 +839,285 @@ img {
   margin-top: 8px;
 }
 
+/* ===== Experience Impact Timeline & Detail Modal ===== */
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-node {
+  display: grid;
+  grid-template-columns: 142px 24px minmax(0, 1fr);
+  gap: 0 12px;
+  align-items: stretch;
+}
+
+.exp-date {
+  padding-top: 17px;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.exp-track {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.exp-track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--divider);
+}
+
+.exp-node:first-child .exp-track::before {
+  top: 22px;
+}
+
+.exp-node:last-child .exp-track::before {
+  bottom: calc(100% - 22px);
+}
+
+.exp-dot {
+  position: relative;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  margin-top: 19px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #a1a1aa;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.exp-node.is-current .exp-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(166, 23, 102, 0.12);
+}
+
+.exp-node:hover .exp-dot {
+  border-color: var(--accent);
+  transform: scale(1.15);
+}
+
+.exp-card {
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--divider);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.exp-node:last-child .exp-card {
+  margin-bottom: 0;
+}
+
+.exp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(166, 23, 102, 0.36);
+}
+
+.exp-logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.exp-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.exp-summary {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.exp-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+
+.exp-role {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.exp-org {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.exp-impact {
+  font-size: 0.86rem;
+  color: var(--text-subtle);
+  line-height: 1.45;
+}
+
+.exp-more {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-subtle);
+  white-space: nowrap;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.exp-card:hover .exp-more {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+/* Experience Detail Modal */
+.cy-exp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 24, 27, 0.48);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cy-exp-overlay.is-open {
+  display: flex;
+}
+
+.cy-exp-modal {
+  width: min(92vw, 560px);
+  max-height: 84vh;
+  background: #ffffff;
+  border: 1px solid var(--divider);
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(24, 24, 27, 0.22);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cy-exp-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.cy-exp-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cy-exp-modal-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.cy-exp-modal-role {
+  margin: 0 0 2px;
+  font-size: 1.08rem;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.cy-exp-modal-org {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.cy-exp-modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--divider);
+  background: #ffffff;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+
+.cy-exp-modal-close:hover {
+  color: var(--accent);
+  border-color: rgba(166, 23, 102, 0.4);
+}
+
+.cy-exp-modal-body {
+  padding: 20px 22px 24px;
+  overflow-y: auto;
+}
+
+.cy-exp-modal-body .experience-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.cy-exp-modal-body .experience-bullets {
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--text);
+}
+
+.cy-exp-modal-body .experience-bullets li {
+  margin-bottom: 8px;
+}
+
+.cy-exp-modal-body .skill-tags {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--divider);
+  font-size: 0.86rem;
+}
+
 /* ===== Honors 2-Column Split (List Left + Carousel Right) ===== */
 .honors-split {
   display: grid;
@@ -1483,6 +1762,43 @@ img {
   .press-thumb {
     width: 96px;
     height: 76px;
+  }
+
+  .exp-node {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 0 10px;
+  }
+
+  .exp-track {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .exp-date {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    padding: 4px 0 6px;
+    font-size: 0.78rem;
+  }
+
+  .exp-node:first-child .exp-track::before {
+    top: 10px;
+  }
+
+  .exp-dot {
+    margin-top: 7px;
+  }
+
+  .exp-card {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .exp-more {
+    display: none;
   }
 }
 
