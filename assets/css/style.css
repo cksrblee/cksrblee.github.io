@@ -407,12 +407,13 @@ img {
 }
 
 .intro-bio {
-  max-width: 74ch;
+  width: 100%;
 }
 
 .intro-bio p {
-  margin: 0 0 14px;
-  font-size: 0.99rem;
+  margin: 0 0 12px;
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
 .intro-bio p:last-child {
