@@ -240,7 +240,6 @@
 
   function initBlogList() {
     var listEl = document.getElementById("blogPostList");
-    var filtersEl = document.getElementById("blogTagFilters");
     if (!listEl) return;
 
     fetch("posts/posts.json")
@@ -254,90 +253,41 @@
           return;
         }
 
-        var activeTag = "all";
-        var allTags = [];
-        posts.forEach(function (p) {
-          (p.tags || []).forEach(function (t) {
-            if (allTags.indexOf(t) === -1) allTags.push(t);
-          });
-        });
+        function formatBlogDate(dateStr) {
+          if (!dateStr) return "";
+          var m = String(dateStr).match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
+          if (!m) return dateStr;
+          var months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+          ];
+          var monthIdx = parseInt(m[2], 10) - 1;
+          if (monthIdx < 0 || monthIdx > 11) return dateStr;
+          return months[monthIdx] + " " + m[1];
+        }
 
-        function renderFilters() {
-          if (!filtersEl || allTags.length === 0) return;
-          var btns = ['<button type="button" class="blog-filter-btn' + (activeTag === "all" ? " is-active" : "") + '" data-tag="all">All</button>'];
-          allTags.forEach(function (tag) {
-            btns.push(
-              '<button type="button" class="blog-filter-btn' +
-                (activeTag === tag ? " is-active" : "") +
-                '" data-tag="' +
-                escapeHtml(tag) +
-                '">#' +
-                escapeHtml(tag) +
-                "</button>"
+        listEl.innerHTML = posts
+          .map(function (post) {
+            var formattedDate = formatBlogDate(post.date);
+
+            return (
+              '<a class="blog-post-row" href="post.html?slug=' +
+              encodeURIComponent(post.slug) +
+              '">' +
+              '<span class="blog-post-title">' +
+              escapeHtml(post.title) +
+              "</span>" +
+              (formattedDate
+                ? '<time class="blog-post-date" datetime="' +
+                  escapeHtml(post.date) +
+                  '">' +
+                  escapeHtml(formattedDate) +
+                  "</time>"
+                : "") +
+              "</a>"
             );
-          });
-          filtersEl.innerHTML = btns.join("");
-          filtersEl.querySelectorAll(".blog-filter-btn").forEach(function (btn) {
-            btn.addEventListener("click", function () {
-              activeTag = btn.dataset.tag;
-              renderFilters();
-              renderPosts();
-            });
-          });
-        }
-
-        function renderPosts() {
-          var filtered =
-            activeTag === "all"
-              ? posts
-              : posts.filter(function (p) {
-                  return (p.tags || []).indexOf(activeTag) !== -1;
-                });
-
-          if (filtered.length === 0) {
-            listEl.innerHTML = '<p class="blog-empty">No posts match this tag.</p>';
-            return;
-          }
-
-          function formatBlogDate(dateStr) {
-            if (!dateStr) return "";
-            var m = String(dateStr).match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
-            if (!m) return dateStr;
-            var months = [
-              "January", "February", "March", "April", "May", "June",
-              "July", "August", "September", "October", "November", "December"
-            ];
-            var monthIdx = parseInt(m[2], 10) - 1;
-            if (monthIdx < 0 || monthIdx > 11) return dateStr;
-            return months[monthIdx] + " " + m[1];
-          }
-
-          listEl.innerHTML = filtered
-            .map(function (post) {
-              var formattedDate = formatBlogDate(post.date);
-
-              return (
-                '<a class="blog-post-row" href="post.html?slug=' +
-                encodeURIComponent(post.slug) +
-                '">' +
-                '<span class="blog-post-title">' +
-                escapeHtml(post.title) +
-                "</span>" +
-                (formattedDate
-                  ? '<time class="blog-post-date" datetime="' +
-                    escapeHtml(post.date) +
-                    '">' +
-                    escapeHtml(formattedDate) +
-                    "</time>"
-                  : "") +
-                "</a>"
-              );
-            })
-            .join("");
-        }
-
-        renderFilters();
-        renderPosts();
+          })
+          .join("");
       })
       .catch(function () {
         listEl.innerHTML = '<p class="blog-empty">Unable to load blog posts.</p>';
