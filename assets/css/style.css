@@ -938,6 +938,13 @@ img {
   border-color: rgba(166, 23, 102, 0.36);
 }
 
+.exp-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
 .exp-logo {
   width: 40px;
   height: 40px;
@@ -1043,6 +1050,13 @@ img {
   align-items: center;
   gap: 12px;
   min-width: 0;
+}
+
+.cy-exp-modal-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 .cy-exp-modal-logo {

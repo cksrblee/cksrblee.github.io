@@ -174,6 +174,7 @@
   function initExperienceModal() {
     var overlay = document.getElementById("cyExpOverlay");
     var closeBtn = document.getElementById("cyExpClose");
+    var modalLogos = document.getElementById("cyExpModalLogos");
     var modalLogo = document.getElementById("cyExpModalLogo");
     var modalRole = document.getElementById("cyExpModalRole");
     var modalOrg = document.getElementById("cyExpModalOrg");
@@ -197,14 +198,25 @@
       card.addEventListener("click", function () {
         var node = card.closest(".exp-node");
         if (!node) return;
-        var img = card.querySelector(".exp-logo img");
+        var imgs = card.querySelectorAll(".exp-logo img");
         var roleEl = card.querySelector(".exp-role");
         var orgEl = card.querySelector(".exp-org");
         var detailEl = node.querySelector(".exp-detail-source");
 
-        if (modalLogo && img) {
-          modalLogo.src = img.getAttribute("src") || "";
-          modalLogo.alt = img.getAttribute("alt") || "";
+        if (modalLogos && imgs.length) {
+          modalLogos.innerHTML = "";
+          imgs.forEach(function (srcImg) {
+            var clone = document.createElement("img");
+            clone.className = "cy-exp-modal-logo";
+            clone.width = 40;
+            clone.height = 40;
+            clone.src = srcImg.getAttribute("src") || "";
+            clone.alt = srcImg.getAttribute("alt") || "";
+            modalLogos.appendChild(clone);
+          });
+        } else if (modalLogo && imgs[0]) {
+          modalLogo.src = imgs[0].getAttribute("src") || "";
+          modalLogo.alt = imgs[0].getAttribute("alt") || "";
         }
         if (modalRole && roleEl) {
           modalRole.textContent = roleEl.textContent.trim();
