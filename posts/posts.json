@@ -1,0 +1,15 @@
+[
+  {
+    "slug": "2026-11-12-welcome",
+    "file": "posts/2026-11-12-welcome.md",
+    "title": "Hello, GitHub Pages! — Migrating from Notion & oopy",
+    "date": "2026-11-12",
+    "tags": [
+      "meta",
+      "web",
+      "github-pages"
+    ],
+    "summary": "Notes on moving my personal portfolio from Notion + oopy to a fast, Markdown-driven static site on GitHub Pages.",
+    "readTime": "1 min read"
+  }
+]
