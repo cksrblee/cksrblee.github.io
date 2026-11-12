@@ -299,31 +299,37 @@
             return;
           }
 
+          function formatBlogDate(dateStr) {
+            if (!dateStr) return "";
+            var m = String(dateStr).match(/^(\d{4})-(\d{2})(?:-\d{2})?$/);
+            if (!m) return dateStr;
+            var months = [
+              "January", "February", "March", "April", "May", "June",
+              "July", "August", "September", "October", "November", "December"
+            ];
+            var monthIdx = parseInt(m[2], 10) - 1;
+            if (monthIdx < 0 || monthIdx > 11) return dateStr;
+            return months[monthIdx] + " " + m[1];
+          }
+
           listEl.innerHTML = filtered
             .map(function (post) {
-              var metaParts = [];
-              if (post.date) metaParts.push(escapeHtml(post.date));
-              if (post.readTime) metaParts.push(escapeHtml(post.readTime));
-              var tagsHtml = (post.tags || [])
-                .map(function (t) {
-                  return '<span class="blog-tag">#' + escapeHtml(t) + "</span>";
-                })
-                .join("");
+              var formattedDate = formatBlogDate(post.date);
 
               return (
-                '<a class="blog-post-card" href="post.html?slug=' +
+                '<a class="blog-post-row" href="post.html?slug=' +
                 encodeURIComponent(post.slug) +
                 '">' +
-                '<div class="blog-post-main">' +
-                '<h3 class="blog-post-title">' +
+                '<span class="blog-post-title">' +
                 escapeHtml(post.title) +
-                "</h3>" +
-                '<div class="blog-post-meta">' +
-                metaParts.join(" · ") +
-                "</div>" +
-                (post.summary ? '<p class="blog-post-summary">' + escapeHtml(post.summary) + "</p>" : "") +
-                "</div>" +
-                (tagsHtml ? '<div class="blog-post-tags">' + tagsHtml + "</div>" : "") +
+                "</span>" +
+                (formattedDate
+                  ? '<time class="blog-post-date" datetime="' +
+                    escapeHtml(post.date) +
+                    '">' +
+                    escapeHtml(formattedDate) +
+                    "</time>"
+                  : "") +
                 "</a>"
               );
             })
