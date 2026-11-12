@@ -273,11 +273,11 @@ img {
   position: relative;
   width: 100%;
   text-align: left;
-  padding: 0 0 18px;
-  font-family: 'HSSanTokki20-Regular', sans-serif;
+  padding: 0 0 22px;
 }
 
 .cy-name-block .cy-h1 {
+  font-family: 'HSSanTokki20-Regular', sans-serif;
   font-size: clamp(40px, 4.8vw, 64px);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -290,6 +290,46 @@ img {
   color: var(--accent);
   padding-bottom: 0.12em;
   overflow: visible;
+}
+
+/* First-Screen Credential & Impact Keyword Strip */
+.hero-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  text-align: left;
+}
+
+.hero-proof-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.hero-proof-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.hero-proof-key {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.hero-proof-detail {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  line-height: 1.4;
 }
 
 /* ===== Intro Row (Bio left + Chatbot card right) ===== */
@@ -1272,9 +1312,10 @@ img {
   .highlights-grid,
   .cards-grid-2,
   .honors-split,
-  .press-grid {
+  .press-grid,
+  .hero-proof-strip {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .cy-carousel {
